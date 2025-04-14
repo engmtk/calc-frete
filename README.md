@@ -52,12 +52,12 @@ OSRM. Caso não esteja disponível no momento, um valor padrão será usado.
 Pedágios ainda são simulados, mas o sistema está preparado para incluir
 integração futura com APIs de pedágios reais.
 
-Desenvolvido por Alexandre Santos
-Contato alexandre.zero11@gmail.com
-
 Futuras melhorias
 Tela de histórico de fretes
 Exportação para PDF ou Excel
 Integração com dados reais de pedágios
 Modo Web com Flask ou FastAPI
 Autenticação de usuários.
+
+Desenvolvido por Alexandre Santos
+Contato alexandre.zero11@gmail.com
