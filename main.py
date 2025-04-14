@@ -3,7 +3,7 @@ from tkinter import ttk, messagebox
 import sqlite3
 import requests
 
-# Criação da tabela se não existir
+# Comando para a Criação da tabela caso na exista! Vai facilitar a sua vida, acredite!
 
 
 def inicializar_banco():
@@ -29,7 +29,7 @@ def inicializar_banco():
         ''')
         conn.commit()
 
-# Função auxiliar para geocodificar endereço -> coordenadas
+# Função auxiliar para geocodificar o endereço -> coordenadas
 
 
 def geocodificar(endereco):
@@ -75,7 +75,7 @@ def calcular_distancia_km(origem, destino):
             "Atenção", "Erro ao obter distância. Usando valor padrão.")
         return 100.0  # fallback
 
-# Função principal de cálculo do frete
+# Função principal que realiza o cálculo do frete
 
 
 def calcular_frete():
@@ -89,7 +89,7 @@ def calcular_frete():
 
         distancia_km = calcular_distancia_km(origem, destino)
 
-        # Pedágios (simulado)
+        # Aqui eu inclui os Pedágios (simulado)
         pedagios = 2
         valor_pedagios_total = 15.00 * pedagios
 
@@ -97,7 +97,7 @@ def calcular_frete():
         valor_combustivel_total = litros_usados * valor_combustivel
         valor_total = valor_combustivel_total + valor_pedagios_total + lucro
 
-        # Grava no banco com segurança (sem travar)
+        # Grava no banco local com segurança as informações inseridas na console do usuário (sem travar porque é uma caracteristica do SQLite :D)
         with sqlite3.connect('frete.db') as conn:
             cursor = conn.cursor()
             cursor.execute('''
@@ -153,7 +153,7 @@ entry_lucro.pack()
 
 tk.Button(root, text="Calcular Frete", command=calcular_frete).pack(pady=10)
 
-# Inicia banco
+# Inicializa o banco!
 inicializar_banco()
 
 root.mainloop()
